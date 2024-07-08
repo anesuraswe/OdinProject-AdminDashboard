@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* .box{
+    background-color: lightblue;
+    border: 1px black solid;
+} */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    height: 100%;
+    grid-template-areas:
+      "sidebar sidebar navbar navbar navbar navbar navbar navbar navbar navbar"
+      "sidebar sidebar navbar navbar navbar navbar navbar navbar navbar navbar"
+      "sidebar sidebar main-content main-content main-content main-content main-content main-content main-content main-content"
+      "sidebar sidebar main-content main-content main-content main-content main-content main-content main-content main-content"
+      "sidebar sidebar main-content main-content main-content main-content main-content main-content main-content main-content"
+      "sidebar sidebar main-content main-content main-content main-content main-content main-content main-content main-content"
+      "sidebar sidebar main-content main-content main-content main-content main-content main-content main-content main-content"
+      "sidebar sidebar main-content main-content main-content main-content main-content main-content main-content main-content"
+      "sidebar sidebar main-content main-content main-content main-content main-content main-content main-content main-content";
+}
+
+.sidebar {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-areas:
+      "sidebar-product"
+      "sidebar-content"
+      "sidebar-content"
+      "sidebar-content"
+      "sidebar-content"
+      "sidebar-content"
+      "sidebar-content"
+      "sidebar-content"
+      "sidebar-content";
+    grid-area: sidebar;
+
+    height: 100%;
+    background-color: #1992d4;
+    color: #ffff;
+}
+
+.sidebar-product {
+    grid-area: sidebar-product;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-product > *{
+    font-size: 2em;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.sidebar-content{
+    grid-area: sidebar-content;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+
+}
+
+.sidebar-content > ul{
+    list-style: none;
+    margin: 10px;
+}
+
+.sidebar-content > ul > *{
+    margin: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    padding: 5px;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.sidebar-content > ul > * > *{
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "search-bar"
+      "navbar-content"
+      "navbar-content";
+    grid-area: navbar;
+}
+
+.search-bar {
+    grid-area: search-bar;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    /* background-color: lightblue;
+    border: 1px black solid; */
+}
+
+.search-bar-items{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.search-bar-items>*{
+    margin: 5px;
+}
+
+.search{
+    border: gray solid 1px;
+    width: 80%;
+    height: 2em;
+    border-radius: 40px;
+}
+
+.navbar-content {
+    grid-area: navbar-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.navbar-content-items{
+    display: flex;
+}
+
+.navbar-content-items>*{
+    margin: 5px
+}
+
+.user-name{
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.myButton {
+	background-color: #1992d4;
+	border-radius:28px;
+	/* border:1px solid #124d77; */
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:10px 30px;
+	text-decoration:none;
+	/* text-shadow:0px 1px 0px #154682; */
+    font-weight: bold;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas:
+      "projects projects projects projects projects projects projects announce announce"
+      "projects projects projects projects projects projects projects announce announce"
+      "projects projects projects projects projects projects projects announce announce"
+      "projects projects projects projects projects projects projects announce announce"
+      "projects projects projects projects projects projects projects trending trending"
+      "projects projects projects projects projects projects projects trending trending"
+      "projects projects projects projects projects projects projects trending trending"
+      "projects projects projects projects projects projects projects trending trending";
+    grid-area: main-content;
+    background-color: #e2e8f0;
+}
+
+.projects{
+    grid-area: projects;
+    display: flex;
+    flex-direction: column;
+    /* background-color: lightblue; */
+    padding: 10px;
+    overflow: auto;
+}
+
+.projects-item-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.projects-item-column{
+    gap: 20px;
+    display: flex;
+    /* flex-direction: column; */  
+    flex-wrap: wrap;  
+    /* flex-wrap: wrap; */
+}
+
+
+
+.card {
+    /* flex-grow: 1; */
+    /* margin: 0 auto; */
+    /* max-width: 50%; */
+    background-color:#ffffff;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.projects-item-column>.card{
+    flex: 1 1 300px;
+    border-left: #f0b428 10px solid;
+    min-height: 230px;
+}
+
+.card>*{
+    padding: 5px;
+}
+
+.card-content>p{
+    font-size: 12px;
+    text-align: justify;
+    padding: 25px 0;
+    color: gray;
+}
+
+.card-footer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card-footer>*{
+    margin: 0 10px;
+}
+
+.announce {
+    grid-area: announce;
+    padding: 10px;
+}
+
+.announce>*{
+    margin: 10px;
+}
+
+
+.announce-item>p{
+    font-size: 10px;
+}
+
+.trending {
+    grid-area: trending;
+    padding: 10px;
+}
+
+.trending>*{
+    margin: 10px;
+}
